@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Test') {
+            steps {
+                dir("c:\Users\Zaynab\Desktop\selenium webdriver\test_test.py"){ 
+                    bat 'python -m pytest -v'
+                }
+            }
+        }
+        stage('Clean Workspace'){
+            steps {
+                cleanWs()
+            }
+        }
+    }
+}
